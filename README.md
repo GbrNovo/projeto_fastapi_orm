@@ -63,7 +63,7 @@ Ele prinará uma URL, é nela que o projeto estará rodando, é nela que as rota
 
 
 
-## 5. Populando o Banco de Dados (Postman / Swagger)
+## 5. Populando o Banco de Dados (Postman)
 
 Para inserir os dados corretamente, deve-se seguir a ordem das tabelas, pois elas são tabelas relacionais, então sempre deve seguir a ordem de dependência das Foreign Keys.
 
@@ -71,7 +71,8 @@ Siga a ordem abaixo para realizar os `POST` requests.
 
 ### Passo 1: Criar Endereço
 * **Rota:** `POST http://127.0.0.1:8000/enderecos/criar-endereco`
-* **Exemplo de inserção de dados:**
+
+**Exemplo de inserção de dados:**
 ```json
 {
   "cep": "70000-000",
@@ -86,7 +87,8 @@ Siga a ordem abaixo para realizar os `POST` requests.
 
 ### Passo 2: Criar Aluno
 * **Rota:** `POST http://127.0.0.1:8000/alunos/criar-aluno`
-* **Exemplo de inserção de dados:**
+
+**Exemplo de inserção de dados:**
 ```json
 {
   "matricula": "202612345",
@@ -99,7 +101,8 @@ Siga a ordem abaixo para realizar os `POST` requests.
 
 ### Passo 3: Criar Disciplina
 * **Rota:** `POST http://127.0.0.1:8000/disciplinas/criar-disciplina`
-* **Exemplo de inserção de dados:**
+
+**Exemplo de inserção de dados:**
 ```json
 {
   "nome_disciplina": "Cálculo Multivariável",
@@ -110,7 +113,8 @@ Siga a ordem abaixo para realizar os `POST` requests.
 
 ### Passo 4: Criar Nota
 * **Rota:** `POST http://127.0.0.1:8000/notas/criar-nota`
-* **Exemplo de inserção de dados:**
+
+**Exemplo de inserção de dados:**
 ```json
 {
   "aluno_id": 1,
