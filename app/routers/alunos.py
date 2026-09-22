@@ -10,13 +10,13 @@ router = APIRouter(prefix="/alunos")
 def primeira_api():
   return {"message": "Hello, World!"}
 
-@router.get("/pegar-dados-alunos")
+@router.get("/pegar-dados-aluno")
 def pegar_dados_alunos():
   query = "SELECT * FROM tb_alunos ORDER BY id"
   df = pd.read_sql(query, engine)
   return df.to_dict(orient="records")
 
-@router.get("/pegar-dados-alunos-por-id/{id}")
+@router.get("/pegar-dados-aluno-por-id/{id}")
 def pegar_dados_alunos_por_id(id: int):
   query = f"SELECT * FROM tb_alunos WHERE id = {id}"
   df = pd.read_sql(query, engine)
