@@ -48,3 +48,16 @@ class NotaUpdateIn(BaseModel):
     aluno_id: Optional[int] = None
     disciplina_id: Optional[int] = None
     nota: Optional[float] = None
+
+# Módulo Biblioteca
+from pydantic import Field
+
+class LivroIn(BaseModel):
+    titulo: str = Field(min_length=1, max_length=255)
+    autor: str = Field(min_length=1, max_length=255)
+    isbn: Optional[str] = Field(default=None, max_length=20)
+
+
+class EmprestimoIn(BaseModel):
+    aluno_id: int = Field(gt=0)
+    livro_id: int = Field(gt=0)

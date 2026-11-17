@@ -17,6 +17,12 @@ def pegar_dados_disciplina():
   df = pd.read_sql(query, engine)
   return df.to_dict(orient="records")
 
+@router.get("/pegar-dados-disciplina-por-id/{id}")
+def pegar_dados_disciplina_por_id(id: int):
+  query = f"SELECT * FROM tb_disciplinas WHERE id = {id}"
+  df = pd.read_sql(query, engine)
+  return df.to_dict(orient="records")
+
 @router.post("/criar-disciplina")
 def criar_disciplina(disciplina: DisciplinaIn): # Variáveis no singular
   df = pd.DataFrame([disciplina.model_dump()])

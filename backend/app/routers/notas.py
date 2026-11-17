@@ -18,6 +18,12 @@ def pegar_dados_nota():
   df = pd.read_sql(query, engine)
   return df.to_dict(orient="records")
 
+@router.get("/pegar-dados-nota-por-id/{id}")
+def pegar_dados_disciplina_por_id(id: int):
+  query = f"SELECT * FROM tb_notas WHERE id = {id}"
+  df = pd.read_sql(query, engine)
+  return df.to_dict(orient="records")
+
 @router.post("/criar-nota")
 def criar_nota(nota: NotaIn): # Variáveis no singular
   df = pd.DataFrame([nota.model_dump()])
